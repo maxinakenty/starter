@@ -1,0 +1,10 @@
+node_modules/
+bower_components/
+__dist/
+tmp/
+design/
+manifest/
+.sublime-gulp.cache
+.sass-cache
+.DS_Store
+npm-debug.log

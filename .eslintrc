@@ -1,0 +1,47 @@
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "extends": "eslint:recommended",
+  "ecmaFeatures": {
+    "experimentalObjectRestSpread": true,
+    "modules": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "eqeqeq": [1, "always"],
+    "linebreak-style": [ "error", "unix"],
+    "quotes": [ 1, "single" ],
+    "semi": [ 1, "always" ],
+    "array-callback-return": 2,
+    "block-scoped-var": 2,
+    "default-case": 2,
+    "guard-for-in": 2,
+    "no-caller": 2,
+    "no-else-return": 2,
+    "no-eq-null": 2,
+    "no-extra-bind": 2,
+    "no-floating-decimal": 2,
+    "no-implicit-coercion": 0,
+    "no-implied-eval": 2,
+    "no-labels": 2,
+    "no-loop-func": 2,
+    "no-multi-spaces": 0,
+    "no-multi-str": 2,
+    "no-new": 2,
+    "no-octal": 2,
+    "no-proto": 2,
+    "no-redeclare": 2,
+    "no-return-assign": 2,
+    "no-throw-literal": 2,
+    "no-useless-call": 2,
+    "radix": 2,
+    "wrap-iife": [2 , "any"],
+    "no-unused-vars": 0,
+    "no-console": 0
+  }
+}

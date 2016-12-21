@@ -1,0 +1,7 @@
+mixin input(type, id, className, placeholder, name, label)
+		label(for="#{id}") #{label}
+		input.form__field(type="#{type}", id="#{id}", class="#{className}", placeholder="#{placeholder}", name="#{name}")
+
+mixin input-simple(type, id, className, placeholder, label)
+	input.form__field(type="#{type}", id="#{id}", class="#{className}", placeholder="#{placeholder}")
+
