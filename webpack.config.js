@@ -1,6 +1,3 @@
-// var webpackStream = require('webpack-stream');
-// var webpack = webpackStream.webpack;
-var AssetsPlugin = require('assets-webpack-plugin');
 var webpack = require('webpack');
 var IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
