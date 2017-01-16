@@ -18,6 +18,7 @@
 			"entry": ["./__src/pages/main.scss"],
 			"sass": {
 				"includePaths": [
+					"./node_modules/normalize.css/",
 					"./tmp/styles/",
 					"./node_modules/susy/sass/",
 					"./__src/styles/"
