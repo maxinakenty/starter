@@ -9,14 +9,14 @@ var path = require('path');
 var IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
 gulp.task('updateHtml', function() {
-  var manifest = gulp.src(path.join(__paths.root.manifest, "rev-manifest.json"));
+	var manifest = gulp.src(path.join(__paths.root.manifest, 'rev-manifest.json'));
 
-  return gulp.src(path.join(__paths.root.dist, '/**/*.html'))
-    .pipe(
-      $.if(!IS_DEVELOPMENT, combine(
-        $.revReplace({
-          manifest: manifest
-        }),
-        gulp.dest(__paths.root.dist)))
-    );
+	return gulp.src(path.join(__paths.root.dist, '/**/*.html'))
+		.pipe(
+			$.if(!IS_DEVELOPMENT, combine(
+				$.revReplace({
+					manifest: manifest
+				}),
+				gulp.dest(__paths.root.dist)))
+		);
 });

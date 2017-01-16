@@ -10,15 +10,15 @@ var revNapkin = require('gulp-rev-napkin');
 var IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
 gulp.task('revScripts', function() {
-  return gulp.src(path.join(__paths.root.dist, '/**/*.js'))
-    .pipe(
-      $.if(!IS_DEVELOPMENT, combine(
-        $.rev(),
-        gulp.dest(__paths.root.dist),
-        revNapkin({
-          verbose: false
-        }),
-        $.rev.manifest('rev-manifest.json'),
-        gulp.dest(__paths.root.manifest)))
-    );
+	return gulp.src(path.join(__paths.root.dist, '/**/*.js'))
+		.pipe(
+			$.if(!IS_DEVELOPMENT, combine(
+				$.rev(),
+				gulp.dest(__paths.root.dist),
+				revNapkin({
+					verbose: false
+				}),
+				$.rev.manifest('rev-manifest.json'),
+				gulp.dest(__paths.root.manifest)))
+		);
 });

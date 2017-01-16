@@ -1,68 +1,68 @@
 {
-  "root": {
-    "src": "./__src/",
-    "dist": "./__dist/",
-    "tmp": "./tmp/",
-    "tasks": "./tasks/",
-    "manifest": "./manifest/",
-    "serve": "./__dist/**/*.*",
-    "debug": "./npm-debug.log"
-  },
+	"root": {
+		"src": "./__src/",
+		"dist": "./__dist/",
+		"tmp": "./tmp/",
+		"tasks": "./tasks/",
+		"manifest": "./manifest/",
+		"serve": "./__dist/**/*.*",
+		"debug": "./npm-debug.log"
+	},
 
-  "src": {
-    "assets": "./__src/assets/**",
-    "jade": [
-      "./__src/pages/index/index.jade"
-    ],
-    "styles": {
-      "entry": ["./__src/pages/main.scss"],
-      "sass": {
-        "includePaths": [
-          "./tmp/styles/",
-          "./node_modules/susy/sass/",
-          "./__src/styles/"
-        ]
-      }
-    },
-    "assets": "./__src/assets/**",
-    "imagemin": "./__src/assets/img/**",
-    "spriteSvg": "./__src/assets/img/**/*.svg",
-    "spritePng": "./__src/assets/img/**/*.png"
-  },
+	"src": {
+		"assets": "./__src/assets/**",
+		"jade": [
+			"./__src/pages/index/index.jade"
+		],
+		"styles": {
+			"entry": ["./__src/pages/main.scss"],
+			"sass": {
+				"includePaths": [
+					"./tmp/styles/",
+					"./node_modules/susy/sass/",
+					"./__src/styles/"
+				]
+			}
+		},
+		"assets": "./__src/assets/**",
+		"imagemin": "./__src/assets/img/**",
+		"spriteSvg": "./__src/assets/img/**/*.svg",
+		"spritePng": "./__src/assets/img/**/*.png"
+	},
 
-  "dist": {
-    "all": "./__dist/**/*",
-    "html": "./__dist/**/*.html",
-    "img": "./__dist/img/",
-    "js": "./__dist/js/",
-    "css": "./__dist/css/",
-    "sprites": "./__dist/sprites/"
-  },
+	"dist": {
+		"all": "./__dist/**/*",
+		"html": "./__dist/**/*.html",
+		"img": "./__dist/img/",
+		"js": "./__dist/js/",
+		"css": "./__dist/css/",
+		"sprites": "./__dist/sprites/"
+	},
 
-  "tmp": {
-    "styles": "./tmp/styles/"
-  },
+	"tmp": {
+		"styles": "./tmp/styles/"
+	},
 
-  "favicon": "./faviconData.json",
+	"favicon": "./faviconData.json",
 
-  "tasks": {
-    "serve": "./tasks/serve",
-    "jade": "./tasks/jade",
-    "assets": "./tasks/assets",
-    "styles": "./tasks/styles",
-    "stylelint": "./__src/**/*.scss",
-    "clean": "./tasks/clean",
-    "imagemin": "./tasks/imagemin",
-    "spriteSvg": "./tasks/spriteSvg",
-    "spritePng": "./tasks/spritePng"
-  },
+	"tasks": {
+		"serve": "./tasks/serve",
+		"jade": "./tasks/jade",
+		"assets": "./tasks/assets",
+		"styles": "./tasks/styles",
+		"stylelint": "./__src/**/*.scss",
+		"clean": "./tasks/clean",
+		"imagemin": "./tasks/imagemin",
+		"spriteSvg": "./tasks/spriteSvg",
+		"spritePng": "./tasks/spritePng"
+	},
 
-  "watch": {
-    "assets": "./__src/assets/**/*.*",
-    "jade": "./__src/**/*.jade",
-    "styles": "./__src/**/*.scss",
-    "scripts": "./__src/pages/**/*.js",
-    "svg": "./__src/assets/img/**/.svg",
-    "png": "./__src/assets/img/**/.png"
-  }
+	"watch": {
+		"assets": "./__src/assets/**/*.*",
+		"jade": "./__src/**/*.jade",
+		"styles": "./__src/**/*.scss",
+		"scripts": "./__src/pages/**/*.js",
+		"svg": "./__src/assets/img/**/.svg",
+		"png": "./__src/assets/img/**/.png"
+	}
 }
