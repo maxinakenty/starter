@@ -11,7 +11,7 @@ var IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'developm
 
 gulp.task('styles', function() {
 	return combine(
-		gulp.src(__paths.src.styles.entry),
+		gulp.src(__paths.src.styles.main),
 		$.if(IS_DEVELOPMENT, $.sourcemaps.init()),
 		$.sass(__paths.src.styles.sass),
 		$.postcss(processors),
