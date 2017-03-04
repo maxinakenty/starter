@@ -1,0 +1,40 @@
+@mixin up($name) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+
+@mixin down($name) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+
+@mixin only($name) {
+  @include up($name) {
+    @include down($name) {
+      @content;
+    }
+  }
+}
+
+
+@mixin between($lower, $upper) {
+  @include up($lower) {
+    @include down($upper) {
+      @content;
+    }
+  }
+}
