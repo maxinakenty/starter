@@ -15,7 +15,7 @@
 			"./__src/pages/index/index.jade"
 		],
 		"styles": {
-			"entry": ["./__src/pages/main.scss"],
+			"main": "./__src/assets/styles/main.scss",
 			"sass": {
 				"includePaths": [
 					"./node_modules/normalize.css/",
