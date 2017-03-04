@@ -8,5 +8,8 @@
 // VENDOR
 @import 'normalize';
 
-// COMPONENTS
-@import '../../components/header/header';
+// LAYOUT
+@import '../../layouts/template';
+
+// PAGES
+@import '../../pages/index/index';
