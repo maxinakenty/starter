@@ -1,1 +1,1 @@
-import module from './module';
+import module from '../../components/header/header';
