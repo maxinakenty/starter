@@ -11,6 +11,8 @@
 
 	"src": {
 		"assets": "./__src/assets/**",
+		"notJade": "!./__src/assets/jade{,/**/*}",
+		"notStyles": "!./__src/assets/styles{,/**/*}",
 		"jade": [
 			"./__src/pages/index/index.jade"
 		],
