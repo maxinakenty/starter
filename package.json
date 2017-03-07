@@ -1,5 +1,5 @@
 {
-  "name": "dodo",
+  "name": "starter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "demo": "NODE_ENV=production gulp demo",
     "zip": "NODE_ENV=production gulp zip"
   },
-  "author": "",
+  "author": "maxinakenty <mgreen097@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^6.5.1",
@@ -57,5 +57,6 @@
     "stream-combiner2": "^1.1.1",
     "vinyl-named": "^1.1.0",
     "webpack": "^1.13.3"
-  }
+  },
+  "repository": "git@github.com:maxinakenty/starter.git"
 }
