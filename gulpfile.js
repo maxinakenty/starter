@@ -28,6 +28,7 @@ gulp.task('build:production', gulp.series(
   'updateHtml',
   'favicon',
   'htmlComb',
+  'zip',
   'sizeReport'));
 
 // npm run demo

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production gulp build:production",
-    "demo": "NODE_ENV=production gulp demo"
+    "demo": "NODE_ENV=production gulp demo",
+    "zip": "NODE_ENV=production gulp zip"
   },
   "author": "",
   "license": "ISC",
@@ -40,6 +41,7 @@
     "gulp-svgmin": "^1.2.3",
     "gulp-svgstore": "^6.1.0",
     "gulp-uglify": "^2.0.0",
+    "gulp-zip": "^4.0.0",
     "gulp.spritesmith": "^6.2.1",
     "gulplog": "^1.0.0",
     "imagemin-pngquant": "^5.0.0",
