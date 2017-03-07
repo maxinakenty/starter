@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "production": "NODE_ENV=production gulp build:production",
+    "build": "NODE_ENV=production gulp build:production",
     "demo": "NODE_ENV=production gulp demo"
   },
   "author": "",
