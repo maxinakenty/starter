@@ -1,5 +1,8 @@
 include ../assets/jade/_list-item
 
+include ../components/header/header
+include ../components/footer/footer
+
 doctype html
 html(lang="ru")
 	head
@@ -16,8 +19,8 @@ html(lang="ru")
 	body
 		.wrap
 			.content
-				include ../components/header/header
+				+header()
 				block content
 
-			include ../components/footer/footer
+			+footer()
 		script(src="js/main.js")
