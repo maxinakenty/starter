@@ -10,14 +10,14 @@ var revNapkin = require('gulp-rev-napkin');
 var IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
 gulp.task('revUpdateReferences', function() {
-	var manifest = gulp.src(path.join(__paths.root.manifest, 'rev-manifest.json'));
+  var manifest = gulp.src(path.join(__paths.root.manifest, 'rev-manifest.json'));
 
-	return gulp.src(path.join(__paths.root.dist, '/**/**.{css,js}'))
-		.pipe(
-			$.if(!IS_DEVELOPMENT, combine(
-				$.revReplace({
-					manifest: manifest
-				}),
-				gulp.dest(__paths.root.dist)))
-		);
+  return gulp.src(path.join(__paths.root.dist, '/**/**.{css,js}'))
+    .pipe(
+      $.if(!IS_DEVELOPMENT, combine(
+        $.revReplace({
+          manifest: manifest
+        }),
+        gulp.dest(__paths.root.dist)))
+    );
 });

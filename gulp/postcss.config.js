@@ -12,19 +12,19 @@ var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'developme
 
 
 module.exports = [
-	autoprefixer({
-		browsers: [
-			'last 2 version', '> 10%'
-		]
-	}),
-	short,
-	clearfix,
-	inlineSvg({
-		path: __paths.dist.img
-	}),
-	flexbugs,
-	assets({
-		basePath: __paths.dist.root,
-		loadPaths: ['img/']
-	})
+  autoprefixer({
+    browsers: [
+      'last 2 version', '> 10%'
+    ]
+  }),
+  short,
+  clearfix,
+  inlineSvg({
+    path: __paths.dist.img
+  }),
+  flexbugs,
+  assets({
+    basePath: __paths.dist.root,
+    loadPaths: ['img/']
+  })
 ];

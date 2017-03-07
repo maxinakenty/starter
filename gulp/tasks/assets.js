@@ -8,13 +8,13 @@ var $ = require('gulp-load-plugins')();
 var combine = require('stream-combiner2').obj;
 
 gulp.task('assets', function() {
-	return gulp.src([
-			__paths.src.assets,
-			__paths.src.notJade,
-			__paths.src.notStyles
-		], {
-			since: gulp.lastRun('assets')
-		})
-		.pipe($.changed(__paths.root.dist))
-		.pipe(gulp.dest(__paths.root.dist));
+  return gulp.src([
+      __paths.src.assets,
+      __paths.src.notJade,
+      __paths.src.notStyles
+    ], {
+      since: gulp.lastRun('assets')
+    })
+    .pipe($.changed(__paths.root.dist))
+    .pipe(gulp.dest(__paths.root.dist));
 });
