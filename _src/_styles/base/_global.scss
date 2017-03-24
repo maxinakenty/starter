@@ -9,6 +9,11 @@ body {
   box-sizing: inherit;
 }
 
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
 img {
   display: inline-block;
   vertical-align: middle;
@@ -22,4 +27,8 @@ button {
   border: 0;
   border-radius: 0;
   background: transparent;
+}
+
+select {
+  border-radius: 0;
 }
