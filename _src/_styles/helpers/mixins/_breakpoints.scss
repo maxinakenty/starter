@@ -2,7 +2,9 @@
   $min: breakpoint-min($name, $breakpoints);
 
   @if $min {
-    @media screen and (min-width: calc-width($min)) {
+    $width: calc-width($min);
+
+    @media screen and (min-width: $width) {
       @content;
     }
   } @else {
@@ -14,7 +16,9 @@
   $max: breakpoint-max($name, $breakpoints);
 
   @if $max {
-    @media screen and (max-width: calc-width($max)) {
+    $width: calc-width($max);
+
+    @media screen and (max-width: $width) {
       @content;
     }
   } @else {
