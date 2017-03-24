@@ -55,8 +55,7 @@
     "postcss-short": "^2.0.1",
     "require-dir": "^0.3.1",
     "stream-combiner2": "^1.1.1",
-    "vinyl-named": "^1.1.0",
-    "webpack": "^1.13.3"
+    "webpack": "^2.3.1"
   },
   "repository": "git@github.com:maxinakenty/starter.git"
 }

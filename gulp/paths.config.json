@@ -1,45 +1,43 @@
 {
   "root": {
-    "src": "./__src/",
-    "dist": "./__dist/",
+    "src": "./_src/",
+    "dist": "./_dist/",
     "tmp": "./tmp/",
     "tasks": "./tasks/",
     "manifest": "./manifest/",
-    "serve": "./__dist/**/*.*",
+    "serve": "./_dist/**/*.*",
     "debug": "./npm-debug.log"
   },
 
   "src": {
-    "assets": "./__src/assets/**",
-    "notJade": "!./__src/assets/jade{,/**/*}",
-    "notStyles": "!./__src/assets/styles{,/**/*}",
+    "assets": "./_src/assets/**",
     "jade": [
-      "./__src/pages/index/index.jade"
+      "./_src/pages/index/index.jade"
     ],
     "styles": {
-      "main": "./__src/assets/styles/main.scss",
+      "main": "./_src/_styles/main.scss",
       "sass": {
         "includePaths": [
           "./node_modules/normalize.css/",
           "./tmp/styles/",
           "./node_modules/susy/sass/",
-          "./__src/styles/"
+          "./_src/styles/"
         ]
       }
     },
-    "assets": "./__src/assets/**",
-    "imagemin": "./__src/assets/img/**",
-    "spriteSvg": "./__src/assets/img/**/*.svg",
-    "spritePng": "./__src/assets/img/**/*.png"
+    "assets": "./_src/assets/**",
+    "imagemin": "./_src/assets/img/**",
+    "spriteSvg": "./_src/assets/img/**/*.svg",
+    "spritePng": "./_src/assets/img/**/*.png"
   },
 
   "dist": {
-    "all": "./__dist/**/*",
-    "html": "./__dist/**/*.html",
-    "img": "./__dist/img/",
-    "js": "./__dist/js/",
-    "css": "./__dist/css/",
-    "sprites": "./__dist/sprites/"
+    "all": "./_dist/**/*",
+    "html": "./_dist/**/*.html",
+    "img": "./_dist/img/",
+    "js": "./_dist/js/",
+    "css": "./_dist/css/",
+    "sprites": "./_dist/sprites/"
   },
 
   "tmp": {
@@ -53,7 +51,7 @@
     "jade": "./tasks/jade",
     "assets": "./tasks/assets",
     "styles": "./tasks/styles",
-    "stylelint": "./__src/**/*.scss",
+    "stylelint": "./_src/**/*.scss",
     "clean": "./tasks/clean",
     "imagemin": "./tasks/imagemin",
     "spriteSvg": "./tasks/spriteSvg",
@@ -61,11 +59,11 @@
   },
 
   "watch": {
-    "assets": "./__src/assets/**/*.*",
-    "jade": "./__src/**/*.jade",
-    "styles": "./__src/**/*.scss",
-    "scripts": "./__src/pages/**/*.js",
-    "svg": "./__src/assets/img/**/.svg",
-    "png": "./__src/assets/img/**/.png"
+    "assets": "./_src/assets/**/*.*",
+    "jade": "./_src/**/*.jade",
+    "styles": "./_src/**/*.scss",
+    "scripts": "./_src/pages/**/*.js",
+    "svg": "./_src/assets/img/**/.svg",
+    "png": "./_src/assets/img/**/.png"
   }
 }

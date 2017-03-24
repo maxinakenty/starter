@@ -1,14 +1,13 @@
-var webpack = require('webpack');
-var IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
+const webpack = require('webpack');
+const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
 module.exports = {
-  context: __dirname + '/__src/pages/index',
+  context: __dirname + '/_src/pages/index',
   entry: {
     main: './index'
   },
   output: {
-    path: __dirname + '/__dist/js',
-    publicPath: '/js/',
+    path: __dirname + '/_dist/js',
     filename: '[name].js'
   },
 
@@ -17,40 +16,28 @@ module.exports = {
     argregateTimeout: 100
   },
 
-  devtool: IS_DEVELOPMENT ? 'cheap-module-inline-source-map' : null,
+  devtool: IS_DEVELOPMENT ? 'cheap-module-inline-source-map' : false,
 
   plugins: [
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
   module: {
-    loaders: [{
+    rules: [{
       test: /\.js?$/,
       exclude: [/node_modules/],
-      loader: 'babel',
+      loader: 'babel-loader',
       query: {
         presets: ['es2015']
       }
     }]
-  },
-
-  noParse: wrapRegexp(/\/node_modules\//, 'noParse')
+  }
 };
-
-function wrapRegexp(regexp, label) {
-  regexp.test = function(path) {
-    console.log(label, path);
-
-    return RegExp.prototype.test.call(this, path);
-  };
-
-  return regexp;
-}
 
 if (!IS_DEVELOPMENT) {
   module.exports.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false,
+        warnings: true,
         unsafe: true
       }
     }));

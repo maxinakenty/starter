@@ -9,9 +9,7 @@ var combine = require('stream-combiner2').obj;
 
 gulp.task('assets', function() {
   return gulp.src([
-      __paths.src.assets,
-      __paths.src.notJade,
-      __paths.src.notStyles
+      __paths.src.assets
     ], {
       since: gulp.lastRun('assets')
     })
