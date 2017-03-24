@@ -1,7 +1,8 @@
 @mixin up($name) {
   $min: breakpoint-min($name, $breakpoints);
+
   @if $min {
-    @media (min-width: $min) {
+    @media screen and (min-width: calc-width($min)) {
       @content;
     }
   } @else {
@@ -9,11 +10,11 @@
   }
 }
 
-
 @mixin down($name) {
   $max: breakpoint-max($name, $breakpoints);
+
   @if $max {
-    @media (max-width: $max) {
+    @media screen and (max-width: calc-width($max)) {
       @content;
     }
   } @else {
@@ -29,7 +30,6 @@
     }
   }
 }
-
 
 @mixin between($lower, $upper) {
   @include up($lower) {
