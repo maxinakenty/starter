@@ -28,10 +28,3 @@
 
   @return if($next, breakpoint-min($next, $breakpoints) - 1, null);
 }
-
-//  CALC WIDTH
-@function calc-width($val) {
-  $result: $val / 16 * 1em;
-
-  @return $result;
-}
