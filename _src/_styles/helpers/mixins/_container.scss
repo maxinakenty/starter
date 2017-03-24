@@ -1,0 +1,21 @@
+@mixin container-width($name) {
+   $width: get-container-width($name);
+   width: calc-width($width);
+   max-width: 100%;
+}
+
+@mixin container() {
+  width: 100%;
+  min-height: 1px;
+  margin-left: auto;
+  margin-right:  auto;
+  transition: all 0.3s ease;
+
+  @for $i from 2 through $breakpoints-length {
+    $key: nth($breakpoints-keys, $i);
+
+    @include up($key) {
+      @include container-width($key);
+    }
+  }
+}
