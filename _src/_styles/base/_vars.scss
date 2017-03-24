@@ -5,3 +5,14 @@ $breakpoints: (
   lg: 992,
   xl: 1200
 ) !default;
+
+$breakpoints-length: length($breakpoints);
+$breakpoints-keys: map-keys($breakpoints);
+
+$container-width: (
+  xs: 0,
+  sm: 540,
+  md: 720,
+  lg: 960,
+  xl: 1140
+) !default;
