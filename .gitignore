@@ -1,6 +1,6 @@
 node_modules/
 bower_components/
-__dist/
+_dist/
 tmp/
 design/
 manifest/
