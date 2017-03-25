@@ -1,0 +1,7 @@
+@mixin col($val) {
+  position: relative;
+  width: 100% / ($grid-columns-count / $val);
+  float: left;
+  padding-left: gap(2);
+  padding-right: gap(2);
+}
