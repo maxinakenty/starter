@@ -1,0 +1,3 @@
+@function gap($val) {
+  @return rem($gutter / $val);
+}
