@@ -1,3 +1,13 @@
+$font-root: 16 !default;
+$gutter: 30;
+
+$grid-gutter-widths: (
+  sm: 20,
+  lg: 30
+) !default;
+
+$grid-columns-count: 12 !default;
+
 $breakpoints: (
   xs: 0,
   sm: 576,
@@ -6,10 +16,10 @@ $breakpoints: (
   xl: 1200
 ) !default;
 
-$breakpoints-length: length($breakpoints);
-$breakpoints-keys: map-keys($breakpoints);
+$breakpoints-length: length($breakpoints) !default;
+$breakpoints-keys: map-keys($breakpoints) !default;
 
-$container-width: (
+$container-widths: (
   xs: 0,
   sm: 540,
   md: 720,
@@ -17,6 +27,3 @@ $container-width: (
   xl: 1140
 ) !default;
 
-$gutter: 30;
-
-$font-root: 16;
