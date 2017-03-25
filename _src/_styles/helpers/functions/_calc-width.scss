@@ -1,5 +1,6 @@
-@function calc-width($val) {
-  $result: $val / 16 * 1em;
+@function calc-width($val, $unit: 'em') {
+  $trim-unit: trim($unit);
+  $result: $val / 16 * 1#{$trim-unit};
 
   @return $result;
 }
