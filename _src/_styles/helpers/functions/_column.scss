@@ -1,0 +1,5 @@
+@function col($val) {
+  $result: 100% / ($grid-columns-count / $val);
+
+  @return $result;
+}
