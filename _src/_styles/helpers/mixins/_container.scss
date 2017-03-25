@@ -1,15 +1,21 @@
 @mixin container-width($name) {
    $width: get-container-width($name);
-   width: calc-width($width);
+   width: calc-width($width, 'rem');
    max-width: 100%;
 }
 
-@mixin container() {
-  width: 100%;
+@mixin container($gap: 'no-gap') {
   min-height: 1px;
   margin-left: auto;
   margin-right:  auto;
   transition: all 0.3s ease;
+
+  @if trim($gap) == 'gap' {
+    padding-left: gap(2);
+    padding-right: gap(2);
+  } @else {
+    @warn "#{$gap} is not correct! Set the 'gap' to include paddings.";
+  }
 
   @for $i from 2 through $breakpoints-length {
     $key: nth($breakpoints-keys, $i);
