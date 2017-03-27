@@ -3,10 +3,8 @@
   @if trim($val) == 'flex' {
     display: flex;
     flex-flow: row wrap;
-  }
-
-  @else if trim($val) == 'no-flex' {
-    display: block !important;
+  } @else if trim($val) == 'no-flex' {
+    display: block;
     clear: fix;
   } @else {
     @warn "#{$val} is not correct! Set 'no-flex' to turn off flexbox.";
