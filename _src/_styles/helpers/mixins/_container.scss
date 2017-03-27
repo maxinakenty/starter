@@ -1,6 +1,6 @@
 @mixin container-width($name) {
    $width: get-container-width($name);
-   width: calc-width($width, 'rem');
+   width: convert-to-em($width);
    max-width: 100%;
 }
 
