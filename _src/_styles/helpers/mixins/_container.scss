@@ -5,16 +5,20 @@
 }
 
 @mixin container($gap: 'no-gap') {
-  min-height: 1px;
-  margin-left: auto;
-  margin-right:  auto;
-  transition: all 0.3s ease;
-
-  @if trim($gap) == 'gap' {
-    padding-left: gap(2);
-    padding-right: gap(2);
+  @if trim($gap) == 'no-gap' {
+    min-height: 1px;
+    margin-left: auto;
+    margin-right:  auto;
+    transition: all 0.3s ease;
+  } @else if trim($gap) == 'gap' {
+      min-height: 1px;
+      margin-left: auto;
+      margin-right:  auto;
+      transition: all 0.3s ease;
+      padding-left: gap(2);
+      padding-right: gap(2);
   } @else {
-    @warn "#{$gap} is not correct! Set the 'gap' to include paddings.";
+      @warn "#{$gap} is not correct! Set the 'gap' to include paddings.";
   }
 
   @for $i from 2 through $breakpoints-length {
