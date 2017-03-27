@@ -1,6 +1,7 @@
 html,
 body {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 *,
@@ -10,7 +11,8 @@ body {
 }
 
 input:focus,
-textarea:focus {
+textarea:focus,
+button:focus {
   outline: none;
 }
 
@@ -23,10 +25,15 @@ img {
 }
 
 button {
+  display: inline-block;
+  vertical-align: middle;
   appearance: none;
   border: 0;
   border-radius: 0;
   background: transparent;
+  box-shadow: none;
+  text-align: center;
+  text-decoration: none;
 }
 
 select {
