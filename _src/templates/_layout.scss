@@ -18,3 +18,10 @@ body {
   height: 200px;
   background: rgba(black, 0.3);
 }
+
+.container {
+  @include container(gap);
+  background-color: lightblue;
+  min-height: 700px;
+}
+
