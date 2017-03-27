@@ -1,8 +1,8 @@
 // from   http://www.sitepoint.com/centering-with-sass/
 
 @mixin centering($width: null, $height: null) {
-  left: 50%;
   position: absolute;
+  left: 50%;
   top: 50%;
 
   @if not $width and not $height {
