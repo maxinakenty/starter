@@ -11,8 +11,8 @@
 
   "src": {
     "assets": "./_src/assets/**",
-    "jade": [
-      "./_src/pages/index/index.jade"
+    "pug": [
+      "./_src/pages/index/index.pug"
     ],
     "styles": {
       "main": "./_src/_styles/main.scss",
@@ -48,7 +48,7 @@
 
   "tasks": {
     "serve": "./tasks/serve",
-    "jade": "./tasks/jade",
+    "pug": "./tasks/pug",
     "assets": "./tasks/assets",
     "styles": "./tasks/styles",
     "stylelint": "./_src/**/*.scss",
@@ -60,7 +60,7 @@
 
   "watch": {
     "assets": "./_src/assets/**/*.*",
-    "jade": "./_src/**/*.jade",
+    "pug": "./_src/**/*.pug",
     "styles": "./_src/**/*.scss",
     "scripts": "./_src/pages/**/*.js",
     "svg": "./_src/assets/img/**/.svg",

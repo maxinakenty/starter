@@ -13,7 +13,7 @@ gulp.task('build', gulp.series(
   // 'sprite:svg',
   'assets',
   'styles',
-  gulp.parallel('imagemin', 'webpack', 'jade')
+  gulp.parallel('imagemin', 'webpack', 'pug')
 ));
 
 
