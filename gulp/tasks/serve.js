@@ -1,10 +1,10 @@
 'use strict';
 
-var gulp = require('gulp');
-var __paths = require('../paths.config');
-var browserSync = require('browser-sync').create();
+const gulp = require('gulp');
+const __paths = require('../paths.config');
+const browserSync = require('browser-sync').create();
 
-gulp.task('serve', function() {
+gulp.task('serve', () => {
   browserSync.init({
     open: false,
     notify: false,

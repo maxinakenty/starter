@@ -1,15 +1,15 @@
 'use strict';
 
-var gulp = require('gulp');
-var __paths = require('../paths.config');
-var processors = require('../postcss.config');
+const gulp = require('gulp');
+const __paths = require('../paths.config');
+const processors = require('../postcss.config');
 
-var $ = require('gulp-load-plugins')();
-var combine = require('stream-combiner2').obj;
+const $ = require('gulp-load-plugins')();
+const combine = require('stream-combiner2').obj;
 
-var IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
+const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
-gulp.task('styles', function() {
+gulp.task('styles', () => {
   return combine(
     gulp.src(__paths.src.styles.main),
     $.if(IS_DEVELOPMENT, $.sourcemaps.init()),

@@ -1,15 +1,12 @@
-var gulp = require('gulp');
-var __paths = require('../../paths.config');
+const gulp = require('gulp');
+const __paths = require('../../paths.config');
+const $ = require('gulp-load-plugins')();
+const combine = require('stream-combiner2').obj;
+const path = require('path');
+const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
-var $ = require('gulp-load-plugins')();
-// connect the plugin so ($. == gulp + name of plugin) gulp-if == $.if, gulp-sass == $.sass etc
-
-var combine = require('stream-combiner2').obj; // Handle errors
-var path = require('path');
-var IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
-
-gulp.task('updateHtml', function() {
-  var manifest = gulp.src(path.join(__paths.root.manifest, 'rev-manifest.json'));
+gulp.task('updateHtml', () => {
+  const manifest = gulp.src(path.join(__paths.root.manifest, 'rev-manifest.json'));
 
   return gulp.src(path.join(__paths.root.dist, '/**/*.html'))
     .pipe(

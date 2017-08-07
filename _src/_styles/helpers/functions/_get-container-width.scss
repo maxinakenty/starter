@@ -1,8 +1,0 @@
-@function get-container-width($key) {
-  @if map-has-key($container-widths, $key) {
-    @return map-get($container-widths, $key);
-  }
-
-  @warn "#{$key} is not a set $container-width variable";
-  @return null;
-}

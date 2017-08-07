@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
 module.exports = {
-  context: __dirname + '/_src/pages/index',
+  context: __dirname + '/_src/',
   entry: {
     main: './index'
   },

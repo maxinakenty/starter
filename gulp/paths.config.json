@@ -12,13 +12,14 @@
   "src": {
     "assets": "./_src/assets/**",
     "pug": [
-      "./_src/pages/index/index.pug"
+      "./_src/index.pug"
     ],
     "styles": {
       "main": "./_src/_styles/main.scss",
       "sass": {
         "includePaths": [
           "./node_modules/normalize.css/",
+          "./node_modules/modularscale-sass/stylesheets/",
           "./tmp/styles/",
           "./node_modules/susy/sass/",
           "./_src/styles/"

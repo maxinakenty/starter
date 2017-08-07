@@ -1,12 +1,12 @@
 'use strict';
 
-var gulp = require('gulp');
-var __paths = require('../paths.config');
-var htmlbeautify = require('gulp-html-beautify');
+const gulp = require('gulp');
+const __paths = require('../paths.config');
+const htmlbeautify = require('gulp-html-beautify');
 
-gulp.task('htmlComb', function() {
+gulp.task('htmlComb', () => {
 
-  var options = {
+  const options = {
     'indent_size': 4,
     'indent_char': ' ',
     'eol': '\n',

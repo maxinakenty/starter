@@ -1,13 +1,11 @@
 'use strict';
 
-var gulp = require('gulp');
-var __paths = require('../paths.config');
-var $ = require('gulp-load-plugins')();
+const gulp = require('gulp');
+const __paths = require('../paths.config');
+const $ = require('gulp-load-plugins')();
+const pngquant = require('imagemin-pngquant');
 
-var pngquant = require('imagemin-pngquant');
-
-
-gulp.task('imagemin', function() {
+gulp.task('imagemin', () => {
   return gulp.src(__paths.src.imagemin)
     .pipe($.changed(__paths.dist.img))
     .pipe($.imagemin({

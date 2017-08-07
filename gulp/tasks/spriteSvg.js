@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 // var path = require('path');
 // var gulp = require('gulp');
@@ -9,7 +9,7 @@
 
 // var IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
-// gulp.task('sprite:svg', function() {
+// gulp.task('sprite:svg', () => {
 // 	gulp.src(__paths.src.spriteSvg)
 // 		.pipe($.if(IS_DEVELOPMENT, $.plumber(handleErrors)))
 // 		.pipe($.if(!IS_DEVELOPMENT, combine(

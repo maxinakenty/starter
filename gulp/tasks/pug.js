@@ -1,11 +1,11 @@
 'use strict';
 
-var gulp = require('gulp');
-var __paths = require('../paths.config');
-var $ = require('gulp-load-plugins')();
-var combine = require('stream-combiner2').obj;
+const gulp = require('gulp');
+const __paths = require('../paths.config');
+const $ = require('gulp-load-plugins')();
+const combine = require('stream-combiner2').obj;
 
-gulp.task('pug', function() {
+gulp.task('pug', () => {
   return combine(
     gulp.src(__paths.src.pug),
     $.pug({

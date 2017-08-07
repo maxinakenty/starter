@@ -46,6 +46,7 @@
     "gulp.spritesmith": "^6.2.1",
     "gulplog": "^1.0.0",
     "imagemin-pngquant": "^5.0.0",
+    "modularscale-sass": "^3.0.3",
     "node-notifier": "^4.6.1",
     "normalize.css": "^5.0.0",
     "path": "^0.12.7",
@@ -58,5 +59,9 @@
     "stream-combiner2": "^1.1.1",
     "webpack": "^2.3.1"
   },
-  "repository": "git@github.com:maxinakenty/starter.git"
+  "repository": "git@github.com:maxinakenty/starter.git",
+  "dependencies": {
+    "pino": "^4.7.1",
+    "postcss-micro-module": "^1.0.0"
+  }
 }

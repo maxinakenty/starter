@@ -1,18 +1,21 @@
-//  BASE
-@import './base/vars';
+@import 'modularscale';
 
-// HELPERS
-@import './helpers/functions/functions';
-@import './helpers/mixins/mixins';
+$modularscale: (
+  base: 16px,
+  ratio: 1.5,
+  400px: (
+    base: 17px,
+  ),
+  900px: (
+    base: 19px
+  ),
+  1200px: (
+    base: 22px
+  ),
+);
 
-// VENDOR
-@import 'normalize';
-@import './base/typography';
-@import './base/global';
-
-
-// LAYOUT
-@import '../templates/layout';
-
-// PAGES
-@import '../pages/index/index';
+body {
+  @include ms-respond(font-size, 0);
+  line-height: 1.5;
+  background-color: pink;
+}

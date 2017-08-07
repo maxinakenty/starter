@@ -1,17 +1,16 @@
-var gulp = require('gulp');
-var __paths = require('../../paths.config');
+'use strict';
 
-var $ = require('gulp-load-plugins')();
-// connect the plugin so ($. == gulp + name of plugin) gulp-if == $.if, gulp-sass == $.sass etc
+const gulp = require('gulp');
+const __paths = require('../../paths.config');
+const $ = require('gulp-load-plugins')();
+const combine = require('stream-combiner2').obj;
+const path = require('path');
+const revNapkin = require('gulp-rev-napkin');
 
-var combine = require('stream-combiner2').obj; // Handle errors
-var path = require('path');
-var revNapkin = require('gulp-rev-napkin');
+const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
-var IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
-
-gulp.task('revAssets', function() {
-  var ignoreThese = '!' + path.join(__paths.root.dist, '/**/*+(css|js|html)');
+gulp.task('revAssets', () => {
+  const ignoreThese = '!' + path.join(__paths.root.dist, '/**/*+(css|js|html)');
 
   return gulp.src([
       path.join(__paths.dist.all),
@@ -21,7 +20,7 @@ gulp.task('revAssets', function() {
       $.if(!IS_DEVELOPMENT, combine(
         $.rev(),
         gulp.dest(__paths.root.dist),
-        revNapkin({
+        $.revNapkin({
           verbose: false
         }),
         $.rev.manifest('rev-manifest.json'),

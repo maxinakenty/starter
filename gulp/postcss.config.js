@@ -1,20 +1,18 @@
 'use strict';
 
-var __paths = require('./paths.config');
-var autoprefixer = require('autoprefixer');
-var short = require('postcss-short');
-var clearfix = require('postcss-clearfix');
-var inlineSvg = require('postcss-inline-svg');
-var flexbugs = require('postcss-flexbugs-fixes');
-var assets = require('postcss-assets');
-
-var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
-
+const __paths = require('./paths.config');
+const autoprefixer = require('autoprefixer');
+const short = require('postcss-short');
+const clearfix = require('postcss-clearfix');
+const inlineSvg = require('postcss-inline-svg');
+const flexbugs = require('postcss-flexbugs-fixes');
+const assets = require('postcss-assets');
+const microModule = require('postcss-micro-module');
 
 module.exports = [
   autoprefixer({
     browsers: [
-      'last 2 version', '> 10%'
+      'last 2 version', '> 5%'
     ]
   }),
   short,
@@ -25,6 +23,10 @@ module.exports = [
   flexbugs,
   assets({
     basePath: __paths.dist.root,
-    loadPaths: ['img/']
+    loadPaths: ['img/'],
+  }),
+  microModule({
+    base: '16px',
+    lineHeight: 1.5
   })
 ];
