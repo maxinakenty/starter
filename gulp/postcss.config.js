@@ -1,11 +1,11 @@
-const paths = require('../paths.config');
-const autoprefixer = require('autoprefixer');
 const short = require('postcss-short');
+const assets = require('postcss-assets');
 const clearfix = require('postcss-clearfix');
+const autoprefixer = require('autoprefixer');
 const inlineSvg = require('postcss-inline-svg');
 const flexbugs = require('postcss-flexbugs-fixes');
-const assets = require('postcss-assets');
-const microModule = require('postcss-micro-module');
+
+const paths = require('../paths.config');
 
 module.exports = [
   autoprefixer({
