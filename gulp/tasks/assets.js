@@ -1,18 +1,14 @@
-'use struct';
-
 const gulp = require('gulp');
-const __paths = require('../paths.config');
-
 const path = require('path');
 const $ = require('gulp-load-plugins')();
 const combine = require('stream-combiner2').obj;
+const paths = require('../../paths.config');
 
-gulp.task('assets', () => {
-  return gulp.src([
-      __paths.src.assets
-    ], {
-      since: gulp.lastRun('assets')
+gulp.task('assets', () =>
+  gulp
+    .src([paths.src.assets], {
+      since: gulp.lastRun('assets'),
     })
-    .pipe($.changed(__paths.root.dist))
-    .pipe(gulp.dest(__paths.root.dist));
-});
+    .pipe($.changed(paths.root.dist))
+    .pipe(gulp.dest(paths.root.dist)),
+);

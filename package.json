@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "gulp",
+    "start": "gulp",
     "build": "NODE_ENV=production gulp build:production",
     "demo": "NODE_ENV=production gulp demo",
     "zip": "NODE_ENV=production gulp zip"
@@ -19,6 +19,11 @@
     "babel-preset-es2015": "^6.18.0",
     "browser-sync": "^2.17.5",
     "del": "^2.2.2",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-prettier": "^2.4.0",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-changed": "^1.3.2",
     "gulp-cssnano": "^2.1.2",
@@ -56,12 +61,12 @@
     "postcss-inline-svg": "^2.2.0",
     "postcss-short": "^2.0.1",
     "require-dir": "^0.3.1",
-    "stream-combiner2": "^1.1.1",
-    "webpack": "^2.3.1"
+    "stream-combiner2": "^1.1.1"
   },
   "repository": "git@github.com:maxinakenty/starter.git",
   "dependencies": {
     "pino": "^4.7.1",
-    "postcss-micro-module": "^1.0.0"
+    "postcss-micro-module": "^1.0.0",
+    "webpack": "^3.10.0"
   }
 }

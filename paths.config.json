@@ -1,0 +1,75 @@
+{
+  "webpack": {
+    "entry": "src/",
+    "output": "dist/js/"
+  },
+  "root": {
+    "src": "./src/",
+    "dist": "./dist/",
+    "tmp": "./tmp/",
+    "tasks": "./tasks/",
+    "manifest": "./manifest/",
+    "serve": "./dist/**/*.*",
+    "debug": "./npm-debug.log"
+  },
+
+  "src": {
+    "pug": ["./src/index.pug"],
+    "styles": {
+      "main": "./src/scss/main.scss",
+      "sass": {
+        "includePaths": [
+          "./node_modules/normalize.css/",
+          "./node_modules/modularscale-sass/stylesheets/",
+          "./tmp/scss/",
+          "./node_modules/susy/sass/",
+          "./src/scss/"
+        ]
+      }
+    },
+    "assets": "./src/assets/**",
+    "imagemin": "./src/assets/img/**",
+    "spriteSvg": "./src/assets/img/**/*.svg",
+    "spritePng": "./src/assets/img/**/*.png"
+  },
+
+  "dist": {
+    "all": "./dist/**/*",
+    "html": "./dist/**/*.html",
+    "img": "./dist/img/",
+    "js": "./dist/js/",
+    "css": "./dist/css/",
+    "sprites": "./dist/sprites/"
+  },
+
+  "tmp": {
+    "styles": "./tmp/scss/"
+  },
+
+  "favicon": {
+    "FAVICON_DATA_FILE": "./faviconData.json",
+    "masterPicture": "./src/assets/img/favicon.png",
+    "dest": "./dist/img/favicon"
+  },
+
+  "tasks": {
+    "serve": "./tasks/serve",
+    "pug": "./tasks/pug",
+    "assets": "./tasks/assets",
+    "styles": "./tasks/styles",
+    "stylelint": "./src/**/*.scss",
+    "clean": "./tasks/clean",
+    "imagemin": "./tasks/imagemin",
+    "spriteSvg": "./tasks/spriteSvg",
+    "spritePng": "./tasks/spritePng"
+  },
+
+  "watch": {
+    "assets": "./src/assets/**/*.*",
+    "pug": "./src/**/*.pug",
+    "styles": "./src/**/*.scss",
+    "scripts": "./src/pages/**/*.js",
+    "svg": "./src/assets/img/**/.svg",
+    "png": "./src/assets/img/**/.png"
+  }
+}

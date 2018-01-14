@@ -1,15 +1,16 @@
-'use strict';
-
 const gulp = require('gulp');
 const del = require('del');
-const __paths = require('../paths.config');
+const paths = require('../../paths.config');
 
-gulp.task('clean', () => {
-  return del([
-    __paths.root.dist,
-    __paths.root.tmp,
-    __paths.root.manifest,
-    __paths.favicon,
-    __paths.root.debug
-  ]);
-});
+gulp.task('clean', done =>
+  del(
+    [
+      paths.root.dist,
+      paths.root.tmp,
+      paths.root.manifest,
+      paths.favicon.FAVICON_DATA_FILE,
+      paths.root.debug,
+    ],
+    done,
+  ),
+);

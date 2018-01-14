@@ -1,22 +1,27 @@
-'use strict';
-
-const gulp = require('gulp');
-const __paths = require('../../paths.config');
-const $ = require('gulp-load-plugins')();
-const combine = require('stream-combiner2').obj;
 const path = require('path');
+const gulp = require('gulp');
+const $ = require('gulp-load-plugins')();
 const revNapkin = require('gulp-rev-napkin');
-const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
+const combine = require('stream-combiner2').obj;
+const paths = require('../../../paths.config');
 
-gulp.task('revUpdateReferences', () =>  {
-  const manifest = gulp.src(path.join(__paths.root.manifest, 'rev-manifest.json'));
+const IS_DEVELOPMENT =
+  !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
-  return gulp.src(path.join(__paths.root.dist, '/**/**.{css,js}'))
-    .pipe(
-      $.if(!IS_DEVELOPMENT, combine(
+gulp.task('revUpdateReferences', () => {
+  const manifest = gulp.src(
+    path.join(paths.root.manifest, 'rev-manifest.json'),
+  );
+
+  return gulp.src(path.join(paths.root.dist, '/**/**.{css,js}')).pipe(
+    $.if(
+      !IS_DEVELOPMENT,
+      combine(
         $.revReplace({
-          manifest: manifest
+          manifest: manifest,
         }),
-        gulp.dest(__paths.root.dist)))
-    );
+        gulp.dest(paths.root.dist),
+      ),
+    ),
+  );
 });

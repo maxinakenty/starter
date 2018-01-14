@@ -1,0 +1,12 @@
+include ../pug/head
+include ../components/components
+
+doctype html
+html(lang="ru")
+  +head()
+  body
+    #root
+      +header()
+      block content
+      +footer()
+    script(src="js/main.js")

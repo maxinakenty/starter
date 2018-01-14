@@ -1,23 +1,26 @@
-'use strict';
-
-const gulp = require('gulp');
-const __paths = require('../../paths.config');
-const $ = require('gulp-load-plugins')();
-const combine = require('stream-combiner2').obj;
 const path = require('path');
+const gulp = require('gulp');
+const $ = require('gulp-load-plugins')();
 const revNapkin = require('gulp-rev-napkin');
-const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
+const combine = require('stream-combiner2').obj;
+const paths = require('../../../paths.config');
 
-gulp.task('revScripts', () => {
-  return gulp.src(path.join(__paths.root.dist, '/**/*.js'))
-    .pipe(
-      $.if(!IS_DEVELOPMENT, combine(
+const IS_DEVELOPMENT =
+  !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
+
+gulp.task('revScripts', () =>
+  gulp.src(path.join(paths.root.dist, '/**/*.js')).pipe(
+    $.if(
+      !IS_DEVELOPMENT,
+      combine(
         $.rev(),
-        gulp.dest(__paths.root.dist),
+        gulp.dest(paths.root.dist),
         revNapkin({
-          verbose: false
+          verbose: false,
         }),
         $.rev.manifest('rev-manifest.json'),
-        gulp.dest(__paths.root.manifest)))
-    );
-});
+        gulp.dest(paths.root.manifest),
+      ),
+    ),
+  ),
+);

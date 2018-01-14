@@ -1,19 +1,26 @@
+const path = require('path');
 const gulp = require('gulp');
-const __paths = require('../../paths.config');
 const $ = require('gulp-load-plugins')();
 const combine = require('stream-combiner2').obj;
-const path = require('path');
-const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
+const paths = require('../../../paths.config');
+
+const IS_DEVELOPMENT =
+  !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
 gulp.task('updateHtml', () => {
-  const manifest = gulp.src(path.join(__paths.root.manifest, 'rev-manifest.json'));
+  const manifest = gulp.src(
+    path.join(paths.root.manifest, 'rev-manifest.json'),
+  );
 
-  return gulp.src(path.join(__paths.root.dist, '/**/*.html'))
-    .pipe(
-      $.if(!IS_DEVELOPMENT, combine(
+  return gulp.src(path.join(paths.root.dist, '/**/*.html')).pipe(
+    $.if(
+      !IS_DEVELOPMENT,
+      combine(
         $.revReplace({
-          manifest: manifest
+          manifest: manifest,
         }),
-        gulp.dest(__paths.root.dist)))
-    );
+        gulp.dest(paths.root.dist),
+      ),
+    ),
+  );
 });

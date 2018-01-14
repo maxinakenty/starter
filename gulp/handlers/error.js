@@ -1,8 +1,6 @@
-'use strict';
-
 const notifier = require('node-notifier');
 
-module.exports = function (error) {
+module.exports = error => {
   notifier.notify({
     title: error.plugin,
     message: error.message,
