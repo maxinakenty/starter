@@ -65,8 +65,6 @@
   },
   "repository": "git@github.com:maxinakenty/starter.git",
   "dependencies": {
-    "pino": "^4.7.1",
-    "postcss-micro-module": "^1.0.0",
     "webpack": "^3.10.0"
   }
 }
