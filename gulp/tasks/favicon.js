@@ -4,7 +4,7 @@ const realFavicon = require('gulp-real-favicon');
 const paths = require('../../paths.config');
 
 // File where the favicon markups are stored
-const FAVICON_DATA_FILE = paths.favicon.FAVICON_DATA_FILE;
+const { FAVICON_DATA_FILE } = paths.favicon;
 
 // Generate the icons. This task takes a few seconds to complete.
 // You should run it at least once to create the icons. Then,
@@ -87,14 +87,12 @@ gulp.task('inject-favicon-markups', () =>
 // released a new Touch icon along with the latest version of iOS).
 // Run this task from time to time. Ideally, make it part of your
 // continuous integration system.
-gulp.task('check-for-favicon-update', done => {
+gulp.task('check-for-favicon-update', () => {
   const currentVersion = JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).version;
 
   return realFavicon.checkForUpdates(currentVersion, err => {
     if (err) throw err;
   });
-
-  done();
 });
 
 gulp.task('favicon', gulp.series('generate-favicon', 'inject-favicon-markups'));

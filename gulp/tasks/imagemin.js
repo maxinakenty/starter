@@ -1,7 +1,7 @@
 const gulp = require('gulp');
-const paths = require('../../paths.config');
 const $ = require('gulp-load-plugins')();
 const pngquant = require('imagemin-pngquant');
+const paths = require('../../paths.config');
 
 gulp.task('imagemin', () =>
   gulp

@@ -1,7 +1,5 @@
 const gulp = require('gulp');
-const path = require('path');
 const $ = require('gulp-load-plugins')();
-const combine = require('stream-combiner2').obj;
 const paths = require('../../paths.config');
 
 gulp.task('assets', () =>

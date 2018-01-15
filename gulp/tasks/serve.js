@@ -1,13 +1,13 @@
 const gulp = require('gulp');
-const paths = require('../../paths.config');
 const browserSync = require('browser-sync').create();
+const { root } = require('../../paths.config');
 
 gulp.task('serve', () => {
   browserSync.init({
     open: false,
     notify: false,
-    server: paths.root.dist,
+    server: root.dist,
   });
 
-  browserSync.watch([paths.root.serve]).on('change', browserSync.reload);
+  browserSync.watch([root.serve]).on('change', browserSync.reload);
 });

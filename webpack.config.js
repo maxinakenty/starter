@@ -1,23 +1,35 @@
 const webpack = require('webpack');
 const path = require('path');
-const paths = require('./paths.config');
+const paths = require('./paths.config').webpack;
 
 const IS_DEVELOPMENT =
   !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
 const config = {
-  context: path.join(__dirname, paths.webpack.entry),
+  context: path.resolve(__dirname, paths.context),
   entry: {
-    main: './index',
+    common: './layouts/common.js',
+    home: './pages/home/',
+    about: './pages/about/',
   },
   output: {
-    path: path.join(__dirname, paths.webpack.output),
-    filename: '[name].js',
+    path: path.resolve(__dirname, paths.output),
+    publicPath: paths.publicPath,
+    filename: paths.filename,
+    chunkFilename: paths.chunkFilename,
   },
   watch: IS_DEVELOPMENT,
   devtool: IS_DEVELOPMENT ? 'cheap-module-inline-source-map' : false,
 
-  plugins: [new webpack.NoEmitOnErrorsPlugin()],
+  plugins: [
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.DefinePlugin({
+      NODE_ENV: JSON.stringify(IS_DEVELOPMENT),
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common',
+    }),
+  ],
   module: {
     rules: [
       {
@@ -26,7 +38,7 @@ const config = {
         use: {
           loader: 'babel-loader',
           query: {
-            presets: ['es2015'],
+            presets: ['es2015', 'stage-0'],
           },
         },
       },

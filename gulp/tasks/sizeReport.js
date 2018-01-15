@@ -1,6 +1,6 @@
 const gulp = require('gulp');
-const paths = require('../../paths.config');
 const $ = require('gulp-load-plugins')();
+const paths = require('../../paths.config');
 
 gulp.task('sizeReport', () =>
   gulp.src(paths.dist.all).pipe(

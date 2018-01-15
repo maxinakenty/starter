@@ -4,8 +4,7 @@ const clearfix = require('postcss-clearfix');
 const autoprefixer = require('autoprefixer');
 const inlineSvg = require('postcss-inline-svg');
 const flexbugs = require('postcss-flexbugs-fixes');
-
-const paths = require('../paths.config');
+const { dist } = require('../paths.config');
 
 module.exports = [
   autoprefixer({
@@ -14,11 +13,11 @@ module.exports = [
   short,
   clearfix,
   inlineSvg({
-    path: paths.dist.img,
+    path: dist.img,
   }),
   flexbugs,
   assets({
-    basePath: paths.dist.root,
+    basePath: dist.root,
     loadPaths: ['img/'],
   }),
 ];
