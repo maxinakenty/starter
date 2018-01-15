@@ -3,7 +3,7 @@ const btn = document.querySelector('.btn-lazy');
 async function getMessage() {
   const {
     sayHi,
-  } = await import(/* webpackChunkName: "test" */ '../../components');
+  } = await import(/* webpackChunkName: "sayHi" */ '../../components');
   return sayHi;
 }
 

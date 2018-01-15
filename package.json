@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp",
     "build": "NODE_ENV=production gulp build:production",
-    "demo": "NODE_ENV=production gulp demo",
+    "demo": "static dist",
+    "init:watch": "jest",
     "zip": "NODE_ENV=production gulp zip"
   },
   "jest": {
@@ -34,6 +35,7 @@
   },
   "repository": "git@github.com:maxinakenty/starter.git",
   "dependencies": {
+    "assets-webpack-plugin": "^3.5.1",
     "autoprefixer": "^7.2.5",
     "babel-polyfill": "^6.26.0",
     "browser-sync": "^2.23.5",
