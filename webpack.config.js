@@ -14,7 +14,7 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, paths.output),
-    publicPath: '/',
+    publicPath: '/js/',
     filename: '[name].js',
     chunkFilename: '[name].js',
   },
