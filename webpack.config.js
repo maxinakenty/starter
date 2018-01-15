@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const AssetsPlugin = require('assets-webpack-plugin');
 const paths = require('./paths.config').webpack;
 
 const IS_DEVELOPMENT =
@@ -16,8 +15,8 @@ const config = {
   output: {
     path: path.resolve(__dirname, paths.output),
     publicPath: '/',
-    filename: IS_DEVELOPMENT ? '[name].js' : '[name].[chunkhash].js',
-    chunkFilename: IS_DEVELOPMENT ? '[name].js' : '[name].[chunkhash].js',
+    filename: '[name].js',
+    chunkFilename: '[name].js',
   },
   watch: IS_DEVELOPMENT,
   devtool: IS_DEVELOPMENT ? 'cheap-module-inline-source-map' : false,
@@ -29,11 +28,6 @@ const config = {
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common',
-    }),
-
-    new AssetsPlugin({
-      filename: 'rev-manifest.json',
-      path: './manifest/',
     }),
   ],
   module: {

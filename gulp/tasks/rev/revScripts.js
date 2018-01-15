@@ -12,11 +12,11 @@ gulp.task('revScripts', () =>
     $.if(
       !IS_DEVELOPMENT,
       combine(
-        // $.rev(),
+        $.rev(),
         gulp.dest(root.dist),
-        // $.revNapkin({
-        //   verbose: false,
-        // }),
+        $.revNapkin({
+          verbose: false,
+        }),
         $.rev.manifest(),
         gulp.dest(root.manifest),
       ),
