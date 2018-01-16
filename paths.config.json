@@ -1,7 +1,7 @@
 {
   "webpack": {
     "context": "./src",
-    "output": "./dist/js/",
+    "output": "./dist",
     "publicPath": "/js/",
     "filename": "[name].js",
     "chunkFilename": "[name].js"
@@ -18,7 +18,10 @@
   },
 
   "pug": {
-    "entry": ["./src/pages/home/index.pug", "./src/pages/about/about.pug"]
+    "pages": {
+      "index": "./pages/index/index.pug",
+      "about": "./pages/about/about.pug"
+    }
   },
 
   "styles": {
