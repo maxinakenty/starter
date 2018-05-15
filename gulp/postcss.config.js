@@ -1,4 +1,3 @@
-const short = require('postcss-short');
 const assets = require('postcss-assets');
 const clearfix = require('postcss-clearfix');
 const autoprefixer = require('autoprefixer');
@@ -10,7 +9,6 @@ module.exports = [
   autoprefixer({
     browsers: ['last 2 version', '> 5%'],
   }),
-  short,
   clearfix,
   inlineSvg({
     path: dist.img,

@@ -1,5 +1,5 @@
-const gulp = require('gulp');
 const fs = require('fs');
+const { task, src, dest, series } = require('gulp');
 const realFavicon = require('gulp-real-favicon');
 const paths = require('../../paths.config');
 
@@ -10,7 +10,7 @@ const { FAVICON_DATA_FILE } = paths.favicon;
 // You should run it at least once to create the icons. Then,
 // you should run it whenever RealFaviconGenerator updates its
 // package (see the check-for-favicon-update task below).
-gulp.task('generate-favicon', done =>
+task('generate-favicon', done =>
   realFavicon.generateFavicon(
     {
       masterPicture: paths.favicon.masterPicture,
@@ -72,22 +72,21 @@ gulp.task('generate-favicon', done =>
 // Inject the favicon markups in your HTML pages. You should run
 // this task whenever you modify a page. You can keep this task
 // as is or refactor your existing HTML pipeline.
-gulp.task('inject-favicon-markups', () =>
-  gulp
-    .src(paths.dist.html)
+task('inject-favicon-markups', () =>
+  src(paths.dist.html)
     .pipe(
       realFavicon.injectFaviconMarkups(
         JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code,
       ),
     )
-    .pipe(gulp.dest(paths.root.dist)),
+    .pipe(dest(paths.root.dist)),
 );
 
 // Check for updates on RealFaviconGenerator (think: Apple has just
 // released a new Touch icon along with the latest version of iOS).
 // Run this task from time to time. Ideally, make it part of your
 // continuous integration system.
-gulp.task('check-for-favicon-update', () => {
+task('check-for-favicon-update', () => {
   const currentVersion = JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).version;
 
   return realFavicon.checkForUpdates(currentVersion, err => {
@@ -95,4 +94,4 @@ gulp.task('check-for-favicon-update', () => {
   });
 });
 
-gulp.task('favicon', gulp.series('generate-favicon', 'inject-favicon-markups'));
+task('favicon', series('generate-favicon', 'inject-favicon-markups'));

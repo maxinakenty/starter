@@ -1,11 +1,11 @@
-const gulp = require('gulp');
+const { task, src, dest } = require('gulp');
 const $ = require('gulp-load-plugins')();
 const combine = require('stream-combiner2').obj;
 const paths = require('../../paths.config');
 
-gulp.task('sprite:png', () =>
+task('sprite:png', () =>
   combine(
-    gulp.src(paths.src.spritePng),
+    src(paths.src.spritePng),
     $.spritesmith({
       imgPath: '../sprites/sprite.png',
       imgName: 'sprite.png',
@@ -15,6 +15,6 @@ gulp.task('sprite:png', () =>
       padding: 60,
       algorithm: 'alt-diagonal',
     }),
-    $.if('*.scss', gulp.dest(paths.tmp.styles), gulp.dest(paths.dist.sprites)),
+    $.if('*.scss', dest(paths.tmp.styles), dest(paths.dist.sprites)),
   ).on('error', $.notify.onError()),
 );

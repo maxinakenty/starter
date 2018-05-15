@@ -1,11 +1,10 @@
-const gulp = require('gulp');
+const { task, src, dest } = require('gulp');
 const $ = require('gulp-load-plugins')();
 const pngquant = require('imagemin-pngquant');
 const paths = require('../../paths.config');
 
-gulp.task('imagemin', () =>
-  gulp
-    .src(paths.src.imagemin)
+task('imagemin', () =>
+  src(paths.src.imagemin)
     .pipe($.changed(paths.dist.img))
     .pipe(
       $.imagemin({
@@ -18,5 +17,5 @@ gulp.task('imagemin', () =>
         use: [pngquant()],
       }),
     )
-    .pipe(gulp.dest(paths.dist.img)),
+    .pipe(dest(paths.dist.img)),
 );

@@ -1,4 +1,4 @@
-const gulp = require('gulp');
+const { task, src, dest } = require('gulp');
 const htmlBeautify = require('gulp-html-beautify');
 const paths = require('../../paths.config');
 
@@ -25,9 +25,8 @@ const options = {
   end_with_newline: false,
 };
 
-gulp.task('htmlComb', () =>
-  gulp
-    .src(paths.dist.html)
+task('htmlComb', () =>
+  src(paths.dist.html)
     .pipe(htmlBeautify(options))
-    .pipe(gulp.dest(paths.root.dist)),
+    .pipe(dest(paths.root.dist)),
 );

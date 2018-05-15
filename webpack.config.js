@@ -1,19 +1,19 @@
 const path = require('path');
-const webpack = require('webpack');
-const paths = require('./paths.config').webpack;
+const { NoEmitOnErrorsPlugin, DefinePlugin } = require('webpack');
+const { context, output } = require('./paths.config').webpack;
 
-const IS_DEVELOPMENT =
-  !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
+const IS_DEVELOPMENT = process.env.NODE_ENV === 'development'; // Changing environment
 
-const config = {
-  context: path.resolve(__dirname, paths.context),
+module.exports = {
+  mode: IS_DEVELOPMENT ? 'development' : 'production',
+  context: path.resolve(__dirname, context),
   entry: {
     common: './layouts/common.js',
     home: './pages/home/',
     about: './pages/about/',
   },
   output: {
-    path: path.resolve(__dirname, paths.output),
+    path: path.resolve(__dirname, output),
     publicPath: '/js/',
     filename: '[name].js',
     chunkFilename: '[name].js',
@@ -22,12 +22,9 @@ const config = {
   devtool: IS_DEVELOPMENT ? 'cheap-module-inline-source-map' : false,
 
   plugins: [
-    new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.DefinePlugin({
+    new NoEmitOnErrorsPlugin(),
+    new DefinePlugin({
       NODE_ENV: JSON.stringify(IS_DEVELOPMENT),
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
     }),
   ],
   module: {
@@ -45,16 +42,3 @@ const config = {
     ],
   },
 };
-
-if (!IS_DEVELOPMENT) {
-  config.plugins.push(
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: true,
-        unsafe: true,
-      },
-    }),
-  );
-}
-
-module.exports = config;

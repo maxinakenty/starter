@@ -1,8 +1,8 @@
-const gulp = require('gulp');
+const { task } = require('gulp');
 const browserSync = require('browser-sync').create();
 const { root } = require('../../paths.config');
 
-gulp.task('serve', () => {
+task('serve', () => {
   browserSync.init({
     open: false,
     notify: false,

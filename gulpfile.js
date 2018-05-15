@@ -1,25 +1,25 @@
-const gulp = require('gulp');
+const { task, series, parallel } = require('gulp');
 const requireDir = require('require-dir');
 
 requireDir('./gulp/tasks/', {
   recurse: true,
 });
 
-gulp.task(
+task(
   'build',
-  gulp.series(
+  series(
     'clean',
     'assets',
     'styles',
-    gulp.parallel('imagemin', 'webpack', 'pug', done => {
+    parallel('imagemin', 'webpack', 'pug', done => {
       done();
     }),
   ),
 );
 
-gulp.task(
+task(
   'build:production',
-  gulp.series(
+  series(
     'build',
     'revAssets',
     'revUpdateReferences',
@@ -39,7 +39,7 @@ gulp.task(
 );
 
 // npm run demo
-gulp.task('demo', gulp.series('build:production', 'serve'));
+task('demo', series('build:production', 'serve'));
 
 // DEFAULT
-gulp.task('default', gulp.series('build', gulp.parallel('serve', 'watch')));
+task('default', series('build', parallel('serve', 'watch')));

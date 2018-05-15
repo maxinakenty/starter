@@ -1,7 +1,7 @@
-const notifier = require('node-notifier');
+const { notify } = require('node-notifier');
 
 module.exports = error => {
-  notifier.notify({
+  notify({
     title: error.plugin,
     message: error.message,
   });

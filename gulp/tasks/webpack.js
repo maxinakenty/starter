@@ -1,8 +1,8 @@
-const gulp = require('gulp');
+const { task } = require('gulp');
 const webpack = require('webpack');
 const wpcfg = require('../../webpack.config');
 
-gulp.task('webpack', cb => {
+task('webpack', cb => {
   webpack(wpcfg, (err, stats) => {
     if (err) cb(err);
 
